@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище LaborExchangeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Вакансия">
+    <Key>
+      <PropertyRef Name="IDвакансии" />
+    </Key>
+    <Property Name="IDпредприятия" Type="int" Nullable="false" />
+    <Property Name="IDспециальности" Type="int" Nullable="false" />
+    <Property Name="IDвакансии" Type="int" Nullable="false" />
+    <Property Name="Зарплата" Type="int" Nullable="false" />
+    <Property Name="КоличествоЧасовВНеделю" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "LaborExchange.dbo.Диплом" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Контракт">
+    <Key>
+      <PropertyRef Name="IDконтракта" />
+    </Key>
+    <Property Name="IDконтракта" Type="int" Nullable="false" />
+    <Property Name="IDвакансии" Type="int" Nullable="false" />
+    <Property Name="IDчеловека" Type="int" Nullable="false" />
+    <Property Name="ДатаЗаключения" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Предприятие">
+    <Key>
+      <PropertyRef Name="IDпредприятия" />
+    </Key>
+    <Property Name="IDпредприятия" Type="int" Nullable="false" />
+    <Property Name="Адрес" Type="text" Nullable="false" />
+    <Property Name="Телефон" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Специальность">
+    <Key>
+      <PropertyRef Name="IDспециальности" />
+    </Key>
+    <Property Name="IDспециальности" Type="int" Nullable="false" />
+    <Property Name="Название" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Человек">
+    <Key>
+      <PropertyRef Name="IDчеловека" />
+    </Key>
+    <Property Name="IDчеловека" Type="int" Nullable="false" />
+    <Property Name="ФИО" Type="text" Nullable="false" />
+    <Property Name="Адрес" Type="text" Nullable="false" />
+    <Property Name="ДатаРождения" Type="text" Nullable="false" />
+  </EntityType>
+  <Association Name="Вакансия_fk0">
+    <End Role="Предприятие" Type="Self.Предприятие" Multiplicity="1" />
+    <End Role="Вакансия" Type="Self.Вакансия" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предприятие">
+        <PropertyRef Name="IDпредприятия" />
+      </Principal>
+      <Dependent Role="Вакансия">
+        <PropertyRef Name="IDпредприятия" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Вакансия_fk1">
+    <End Role="Специальность" Type="Self.Специальность" Multiplicity="1" />
+    <End Role="Вакансия" Type="Self.Вакансия" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Специальность">
+        <PropertyRef Name="IDспециальности" />
+      </Principal>
+      <Dependent Role="Вакансия">
+        <PropertyRef Name="IDспециальности" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Контракт_fk0">
+    <End Role="Вакансия" Type="Self.Вакансия" Multiplicity="1" />
+    <End Role="Контракт" Type="Self.Контракт" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Вакансия">
+        <PropertyRef Name="IDвакансии" />
+      </Principal>
+      <Dependent Role="Контракт">
+        <PropertyRef Name="IDвакансии" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Контракт_fk1">
+    <End Role="Человек" Type="Self.Человек" Multiplicity="1" />
+    <End Role="Контракт" Type="Self.Контракт" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Человек">
+        <PropertyRef Name="IDчеловека" />
+      </Principal>
+      <Dependent Role="Контракт">
+        <PropertyRef Name="IDчеловека" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище LaborExchangeModelContainer">
+    <EntitySet Name="Вакансия" EntityType="Self.Вакансия" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Контракт" EntityType="Self.Контракт" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Предприятие" EntityType="Self.Предприятие" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Специальность" EntityType="Self.Специальность" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Человек" EntityType="Self.Человек" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Вакансия_fk0" Association="Self.Вакансия_fk0">
+      <End Role="Предприятие" EntitySet="Предприятие" />
+      <End Role="Вакансия" EntitySet="Вакансия" />
+    </AssociationSet>
+    <AssociationSet Name="Вакансия_fk1" Association="Self.Вакансия_fk1">
+      <End Role="Специальность" EntitySet="Специальность" />
+      <End Role="Вакансия" EntitySet="Вакансия" />
+    </AssociationSet>
+    <AssociationSet Name="Контракт_fk0" Association="Self.Контракт_fk0">
+      <End Role="Вакансия" EntitySet="Вакансия" />
+      <End Role="Контракт" EntitySet="Контракт" />
+    </AssociationSet>
+    <AssociationSet Name="Контракт_fk1" Association="Self.Контракт_fk1">
+      <End Role="Человек" EntitySet="Человек" />
+      <End Role="Контракт" EntitySet="Контракт" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

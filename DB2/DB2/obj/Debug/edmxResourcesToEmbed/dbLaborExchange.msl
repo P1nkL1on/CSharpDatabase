@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище LaborExchangeModelContainer" CdmEntityContainer="LaborExchangeEntities">
+    <EntitySetMapping Name="Вакансия">
+      <EntityTypeMapping TypeName="LaborExchangeModel.Вакансия">
+        <MappingFragment StoreEntitySet="Вакансия">
+          <ScalarProperty Name="IDпредприятия" ColumnName="IDпредприятия" />
+          <ScalarProperty Name="IDспециальности" ColumnName="IDспециальности" />
+          <ScalarProperty Name="IDвакансии" ColumnName="IDвакансии" />
+          <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+          <ScalarProperty Name="КоличествоЧасовВНеделю" ColumnName="КоличествоЧасовВНеделю" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Контракт">
+      <EntityTypeMapping TypeName="LaborExchangeModel.Контракт">
+        <MappingFragment StoreEntitySet="Контракт">
+          <ScalarProperty Name="IDконтракта" ColumnName="IDконтракта" />
+          <ScalarProperty Name="IDвакансии" ColumnName="IDвакансии" />
+          <ScalarProperty Name="IDчеловека" ColumnName="IDчеловека" />
+          <ScalarProperty Name="ДатаЗаключения" ColumnName="ДатаЗаключения" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Предприятие">
+      <EntityTypeMapping TypeName="LaborExchangeModel.Предприятие">
+        <MappingFragment StoreEntitySet="Предприятие">
+          <ScalarProperty Name="IDпредприятия" ColumnName="IDпредприятия" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Специальность">
+      <EntityTypeMapping TypeName="LaborExchangeModel.Специальность">
+        <MappingFragment StoreEntitySet="Специальность">
+          <ScalarProperty Name="IDспециальности" ColumnName="IDспециальности" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Человек">
+      <EntityTypeMapping TypeName="LaborExchangeModel.Человек">
+        <MappingFragment StoreEntitySet="Человек">
+          <ScalarProperty Name="IDчеловека" ColumnName="IDчеловека" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="ДатаРождения" ColumnName="ДатаРождения" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Диплом">
+      <EntityTypeMapping TypeName="LaborExchangeModel.Диплом">
+        <MappingFragment StoreEntitySet="Диплом">
+          <ScalarProperty Name="IDспециальности" ColumnName="IDспециальности" />
+          <ScalarProperty Name="IDчеловека" ColumnName="IDчеловека" />
+          <ScalarProperty Name="ДатаВыдачи" ColumnName="ДатаВыдачи" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

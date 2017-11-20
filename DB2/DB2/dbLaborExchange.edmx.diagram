@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e11e250b690248e688bec4283ce46201" Name="Diagram1">
+        <EntityTypeShape EntityType="LaborExchangeModel.Вакансия" Width="1.5" PointX="3.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborExchangeModel.Контракт" Width="1.5" PointX="5.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborExchangeModel.Предприятие" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborExchangeModel.Специальность" Width="1.5" PointX="1.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborExchangeModel.Человек" Width="1.5" PointX="8.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborExchangeModel.Диплом" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="LaborExchangeModel.Вакансия_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="LaborExchangeModel.Вакансия_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="LaborExchangeModel.Контракт_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="LaborExchangeModel.Контракт_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="LaborExchangeModel.Диплом_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="LaborExchangeModel.Диплом_fk1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,15 @@
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\DB2.exe.config
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\DB2.exe
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\DB2.pdb
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\EntityFramework.dll
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\EntityFramework.xml
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\lion6_000\source\repos\DB2\DB2\bin\Debug\ru\EntityFramework.resources.dll
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.csprojResolveAssemblyReference.cache
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.Form1.resources
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.Properties.Resources.resources
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.csproj.GenerateResource.Cache
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.csproj.CoreCompileInputs.cache
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.exe
+c:\users\lion6_000\source\repos\DB2\DB2\obj\Debug\DB2.pdb
