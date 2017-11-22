@@ -28,16 +28,21 @@ namespace DB2
                                   HumanDate = h.ДатаРождения,
                                   HumanAdress = h.Адрес
                               };
-            var transHumanSpec = from h in context.Человек
-                                 join d in context.Диплом on h.IDчеловека equals d.IDчеловека
-                                 join s in context.Специальность on d.IDспециальности equals s.IDспециальности
-                                 select new
-                                 {
-                                     HumanFIO = h.ФИО,
-                                     Diplom = d.ДатаВыдачи,
-                                     Spec = s.Название
-                                 };
+            
+            
+            humanGrid.DataSource = transHumans.ToList();
+            humanGrid.Columns[0].Width = 15;
+
+            
+        }
+
+        private void humanGrid_DoubleClick(object sender, EventArgs e)
+        {
+            var context = new LaborExchangeEntities();
+            int ID = (int)humanGrid.CurrentRow.Cells[0].Value;
+
             var transHumanPredpr = from h in context.Человек
+                                   where h.IDчеловека == ID
                                    join k in context.Контракт on h.IDчеловека equals k.IDчеловека
                                    join v in context.Вакансия on k.IDвакансии equals v.IDвакансии
                                    join p in context.Предприятие on v.IDпредприятия equals p.IDпредприятия
@@ -48,16 +53,30 @@ namespace DB2
                                        KontraktID = k.IDконтракта,
                                        VakansID = v.IDвакансии,
                                        Predpreyatie = p.Адрес,
-                                       Dolzhn = s.Название,
+                                       Spec = s.Название,
                                        Zarplata = v.Зарплата,
                                        Time = v.КоличествоЧасовВНеделю
                                    };
-            humanGrid.DataSource = transHumans.ToList();
-            humanGrid.Columns[0].Width = 15;
-
             moreGrid.DataSource = transHumanPredpr.ToList();
+            moreGrid.Columns[0].Width = 70;
+
             moreGrid.Columns[1].Width = 15;
             moreGrid.Columns[2].Width = 15;
+            moreGrid.Columns[4].Width = 25;
+            moreGrid.Columns[5].Width = 45;
+            moreGrid.Columns[6].Width = 30;
+
+            var transHumanSpec = from h in context.Человек
+                                 where h.IDчеловека == ID
+                                 join d in context.Диплом on h.IDчеловека equals d.IDчеловека
+                                 join s in context.Специальность on d.IDспециальности equals s.IDспециальности
+                                 select new
+                                 {
+                                     HumanFIO = h.ФИО,
+                                     Diplom = d.ДатаВыдачи,
+                                     Spec = s.Название
+                                 };
+            studGrid.DataSource = transHumanSpec.ToList();
         }
     }
 }
