@@ -28,3 +28,4 @@ C:\Users\lion6_000\source\repos\Database-Sharp\DB2\DB2\obj\Debug\DB2.csproj.Gene
 C:\Users\lion6_000\source\repos\Database-Sharp\DB2\DB2\obj\Debug\DB2.csproj.CoreCompileInputs.cache
 C:\Users\lion6_000\source\repos\Database-Sharp\DB2\DB2\obj\Debug\DB2.exe
 C:\Users\lion6_000\source\repos\Database-Sharp\DB2\DB2\obj\Debug\DB2.pdb
+C:\Users\lion6_000\source\repos\Database-Sharp\DB2\DB2\obj\Debug\DB2.AddForm.resources

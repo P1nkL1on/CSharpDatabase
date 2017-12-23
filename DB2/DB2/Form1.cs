@@ -32,8 +32,6 @@ namespace DB2
             
             humanGrid.DataSource = transHumans.ToList();
             humanGrid.Columns[0].Width = 15;
-
-            
         }
 
         private void humanGrid_DoubleClick(object sender, EventArgs e)
@@ -77,6 +75,40 @@ namespace DB2
                                      Spec = s.Название
                                  };
             studGrid.DataSource = transHumanSpec.ToList();
+        }
+
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            AddForm af = new AddForm();
+            if (af.ShowDialog(this) == DialogResult.OK)
+            {
+                //MessageBox.Show("Added");
+                Form1_Load(null, new EventArgs());
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeletePerson();
+        }
+        public void DeletePerson()
+        {
+            var context = new LaborExchangeEntities();
+            context.Человек.Remove(context.Человек.Find((int)humanGrid.CurrentRow.Cells[0].Value));
+            context.SaveChanges();
+            Form1_Load(null, new EventArgs());
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddForm af = new AddForm();
+            af.ChangeToChangeForm(new LaborExchangeEntities().Человек.Find((int)humanGrid.CurrentRow.Cells[0].Value));
+            if (af.ShowDialog(this) == DialogResult.OK)
+            {
+                //MessageBox.Show("Added");
+                Form1_Load(null, new EventArgs());
+            }
         }
     }
 }
